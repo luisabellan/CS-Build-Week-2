@@ -45,8 +45,8 @@ class Solution:
         
 
         # print([n.val for n in list1 ])
-        # print(first_list)
-        # print(second_list)
+        print(first_list)
+        print(second_list)
 
         # get first number
       
@@ -58,7 +58,7 @@ class Solution:
         first_number = 0
         for i in range(len(first_list)):
             first_number += first_list[i] * 10 ** (factor+i)
-        # print(first_number)
+        print(first_number)
 
 
 
