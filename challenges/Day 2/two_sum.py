@@ -36,11 +36,48 @@
 
 class Solution:
     def twoSum(self, nums, target):
-        print('hello')
+        # brute force version - all tests passing except for one complaining about time limit exceeded
+        indices = []
+        print(nums)
+        print(target)
+
+       
+        running = True 
+        for i in range(len(nums)-1):
+            counter = i+1
+            while counter < len(nums):
+                if nums[i] + nums[counter] == target:
+                    indices.append(i)
+                    indices.append(counter)
+                    counter += 1
+                    break
+                else:
+                    counter += 1
+                    
+                    
+                
+
+            
+
+
+
+        print(indices)
+        return indices
+                
+
+            
+
+
+
+
         
 
-input_nums = [2,7,11,15]
-input_target = 9
+input_nums = [0,4,3,0]
+input_target = 0
+# Expected: [0,3]
 
 solution = Solution()
 solution.twoSum(input_nums, input_target)
+
+
+
