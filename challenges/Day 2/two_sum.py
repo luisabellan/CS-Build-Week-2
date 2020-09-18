@@ -31,3 +31,16 @@
 #     -109 <= target <= 109
 #     Only one valid answer exists.
 
+
+
+
+class Solution:
+    def twoSum(self, nums, target):
+        print('hello')
+        
+
+input_nums = [2,7,11,15]
+input_target = 9
+
+solution = Solution()
+solution.twoSum(input_nums, input_target)
