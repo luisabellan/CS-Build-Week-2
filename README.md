@@ -10,6 +10,7 @@ TrainingKit](https://learn.lambdaschool.com/cs/sprint/reco0t22NdXmr8VyL).
 Day 1
 Add Two Numbers: 
 https://leetcode.com/problems/add-two-numbers/
+Contains Duplicate: https://leetcode.com/problems/contains-duplicate/https://leetcode.com/problems/contains-duplicate/
 
 Day 2
 Two Sum: https://leetcode.com/problems/two-sum/
