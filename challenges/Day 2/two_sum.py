@@ -42,7 +42,6 @@ class Solution:
         print(target)
 
        
-        running = True 
         for i in range(len(nums)-1):
             counter = i+1
             while counter < len(nums):
@@ -53,13 +52,7 @@ class Solution:
                     break
                 else:
                     counter += 1
-                    
-                    
-                
-
-            
-
-
+             
 
         print(indices)
         return indices
