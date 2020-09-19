@@ -33,41 +33,57 @@
 
 
 
+# hashmap
+
+
+
+import random
+import math
+
+
+
+
+def create_table():
+    # keys will be arrays holding x and y, where x
+    table = {}
+
+    for x in range(0, 10): # -109,110
+        for y in range(0,10):
+            
+            table[x + y] =  (x, y)
+    print(table)
+    return table.get((x,y))
+    # return table
+
+
+
 
 class Solution:
     def twoSum(self, nums, target):
-        # brute force version - all tests passing except for one complaining about time limit exceeded
+        
         indices = []
-        print(nums)
-        print(target)
+        print('nums',nums) # [0, 4, 3, 0]
 
+        print('target',target) # 0
+
+        # print('here',table[target])
+        table = create_table()
+        print(table)
+        x = table[target][0]
+        y = table[target][1]
+        
+        index = nums.index(x)
+        
+        print([nums.index(x),nums.index(y,index+1)])
+      
        
-        for i in range(len(nums)-1):
-            counter = i+1
-            while counter < len(nums):
-                if nums[i] + nums[counter] == target:
-                    indices.append(i)
-                    indices.append(counter)
-                    counter += 1
-                    break
-                else:
-                    counter += 1
-             
-
-        print(indices)
-        return indices
-                
 
             
-
-
-
-
-        
 
 input_nums = [0,4,3,0]
 input_target = 0
 # Expected: [0,3]
+
 
 solution = Solution()
 solution.twoSum(input_nums, input_target)
