@@ -61,28 +61,22 @@ def create_table():
 class Solution:
     def twoSum(self, nums, target):
         
-        indices = []
-        print('nums',nums) # [0, 4, 3, 0]
+        sums = []
+        hashTable = {}
 
-        print('target',target) # 0
-
-        # print('here',table[target])
-        table = create_table()
-        print(table)
-        x = table[target][0]
-        y = table[target][1]
-        
-        index = nums.index(x)
-        
-        print([nums.index(x),nums.index(y,index+1)])
-      
-       
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            if complement in hashTable:
+                # print("Pair", target,"is: (", nums[i],",",complement,")")
+                print(f'solution: {[i, nums.index(complement)]}')
+                return [i, nums.index(complement)]
+            hashTable[nums[i]] = nums[i]
 
             
 
-input_nums = [0,4,3,0]
-input_target = 0
-# Expected: [0,3]
+input_nums = [3,2,4]
+input_target = 6
+# Expected: [0,1]
 
 
 solution = Solution()

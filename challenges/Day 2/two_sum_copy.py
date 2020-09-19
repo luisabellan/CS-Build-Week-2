@@ -65,9 +65,9 @@ class Solution:
 
         
 
-input_nums = [0,4,3,0]
-input_target = 0
-# Expected: [0,3]
+input_nums = [2,7,11,15]
+input_target = 9
+# Expected: [0,1]
 
 solution = Solution()
 solution.twoSum(input_nums, input_target)
