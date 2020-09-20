@@ -26,11 +26,12 @@ class ListNode():
      
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        
         if isinstance(l1,list):
             l1 = ListNode(l1)
             l2 = ListNode(l2)
 
-        result = head = ListNode("inf")
+        result = head = ListNode(None)
         carry = 0
         while l1 and l2:
             carry, cur = divmod(l1.val + l2.val + carry, 10)
@@ -51,4 +52,7 @@ class Solution:
         
 if __name__ == "__main__":
     test = Solution()
+    
+    list4 = ListNode([1,2,3])
+    print(list4.val)
     print(test.addTwoNumbers([2,4,3],[5,6,4]))
