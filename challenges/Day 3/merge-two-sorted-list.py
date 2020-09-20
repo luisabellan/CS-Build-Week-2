@@ -33,7 +33,15 @@ class ListNode:
 
 class Solution:
     def mergeTwoLists(self, l1: Node, l2: Node) -> Node:
-        pass
+        output1 = [i.val for i in list1]
+       
+
+        output2 = [i.val for i in list2]
+        # print(output2)
+        output3 =  []
+        output3 += output1 + output2
+        print(output3)
+        return output3
         
 
 list1 = ListNode()
@@ -48,14 +56,8 @@ list2.add(Node(4))
 
 
 
-output1 = [i.val for i in list1]
-print(output1)
 
-output2 = [i.val for i in list2]
-print(output2)
-output3 =  []
-output3 += output1 + output2
-print(output3)
+
 
 
 
