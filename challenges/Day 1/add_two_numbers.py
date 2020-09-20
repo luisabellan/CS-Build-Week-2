@@ -9,50 +9,46 @@
 # Explanation: 342 + 465 = 807.
 
 class ListNode():
-    def __init__(self, val):
-        if isinstance(val,int):
-            self.val = val
+    def __init__(self, value):
+        
+        if isinstance(value,int):
+            self.val = value
             self.next = None
             
-        elif isinstance(val,list):
-            self.val = val[0]
+        elif isinstance(value,list):
+            self.val = value[0]
             self.next = None
             cur = self
-            for i in val[1:]:
+            for i in value[1:]:
                 cur.next = ListNode(i)
                 cur = cur.next
-    
-    def gatherAttrs(self):
-        return ", ".join("{}: {}".format(k, getattr(self, k)) for k in self.__dict__.keys())
-
-    def __str__(self):
-            return self.__class__.__name__+" {"+"{}".format(self.gatherAttrs())+"}"
-
-
+            
+     
 class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         if isinstance(l1,list):
             l1 = ListNode(l1)
             l2 = ListNode(l2)
-        re = ListNode(0)
-        r=re
-        carry=0
-        while(l1 or l2):
-            x= l1.val if l1 else 0
-            y= l2.val if l2 else 0
-            s=carry+x+y
-            carry=s//10
-            r.next=ListNode(s%10)
-            r=r.next
-            if(l1!=None):l1=l1.next
-            if(l2!=None):l2=l2.next
-        if(carry>0):
-            r.next=ListNode(1)
-        return re.next
+
+        result = head = ListNode("inf")
+        carry = 0
+        while l1 and l2:
+            carry, cur = divmod(l1.val + l2.val + carry, 10)
+            node = ListNode(cur)
+            head.next = node
+            head, l1, l2 = head.next, l1.next, l2.next
+        head.next = l1 if l1 else l2
+        while carry and head.next:
+            carry, cur = divmod(head.next.val + carry, 10)
+            head.next.val = cur
+            head = head.next
+        if carry:
+            head.next = ListNode(carry)
+
+        return result.next
           
         
         
-# @lc code=end
 if __name__ == "__main__":
     test = Solution()
-    print(test.addTwoNumbers([1,3],[2,1,3]))
+    print(test.addTwoNumbers([2,4,3],[5,6,4]))
