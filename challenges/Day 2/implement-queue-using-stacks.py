@@ -49,8 +49,8 @@ class MyQueue:
 
 queue = MyQueue()
 
-queue.push(1)
-queue.push(2)
-queue.peek()  # returns 1
-queue.pop()  # returns 1
+queue.push(7)
+queue.push(4)
+queue.peek()  # returns 7
+queue.pop()  # returns 7
 queue.empty()  # returns false
