@@ -18,10 +18,10 @@ class ListNode():
         elif isinstance(value,list):
             self.val = value[0]
             self.next = None
-            cur = self
+            current = self
             for i in value[1:]:
-                cur.next = ListNode(i)
-                cur = cur.next
+                current.next = ListNode(i)
+                current = current.next
             
      
 class Solution:
@@ -34,14 +34,25 @@ class Solution:
         result = head = ListNode(None)
         carry = 0
         while l1 and l2:
-            carry, cur = divmod(l1.val + l2.val + carry, 10)
-            node = ListNode(cur)
+            quotient = l1.val + l2.val + carry // 10
+            remainder = l1.val + l2.val + carry % 10
+            carry = quotient
+            current = remainder
+
+            node = ListNode(current)
             head.next = node
             head, l1, l2 = head.next, l1.next, l2.next
-        head.next = l1 if l1 else l2
+        if l1:
+            head.next = l1
+        else:
+            head.next = l2
+       
         while carry and head.next:
-            carry, cur = divmod(head.next.val + carry, 10)
-            head.next.val = cur
+            quotient = head.next.val + carry // 10
+            remainder = head.next.val + carry % 10
+            carry = quotient
+            current = remainder
+            head.next.val = current
             head = head.next
         if carry:
             head.next = ListNode(carry)
@@ -53,6 +64,5 @@ class Solution:
 if __name__ == "__main__":
     test = Solution()
     
-    list4 = ListNode([1,2,3])
-    print(list4.val)
+   
     print(test.addTwoNumbers([2,4,3],[5,6,4]))
