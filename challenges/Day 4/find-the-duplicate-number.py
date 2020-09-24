@@ -40,3 +40,30 @@
 #     1 <= nums[i] <= n
 #     All the integers in nums appear only once except for precisely one integer which appears two or more times.
 
+def findDuplicate(nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        first = nums[0]
+        second = nums[first]
+
+        while second != first:     # move first pointer 1 step and second 2 steps until collide
+            first = nums[first]
+            second = nums[nums[second]]
+
+        second = 0    # restart second from index zero and move both pointers one step at a time
+        while second != first:
+            first = nums[first]
+            second = nums[second]
+        print(second)
+        return second
+        
+# Input: nums = [1,3,4,2,2]
+# Output: 2
+
+# Input: nums = [3,1,3,4,2]
+# Output: 3
+
+nums = [1,3,4,2,2]
+findDuplicate(nums)

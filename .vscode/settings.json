@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/usr/bin/python",
+    "python.pythonPath": "C:\\Users\\Diente\\AppData\\Local\\Programs\\Python\\Python38\\python.exe",
     "vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }

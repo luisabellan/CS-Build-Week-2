@@ -31,3 +31,46 @@
 #     nums is guranteed to be rotated at some pivot.
 #     -10^4 <= target <= 10^4
 
+def search(nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: int
+        """
+        left, right = 0, len(nums) - 1
+
+        while left <= right:
+
+            mid = (left + right) // 2
+
+            if nums[mid] == target:
+                print(mid)
+                return mid
+
+            if nums[left] <= nums[mid]:  # LHS is sorted
+                if target >= nums[left] and target < nums[mid]:  # target is on LHS
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            else:  # RHS is sorted
+                if target <= nums[right] and target > nums[mid]:  # target is on RHS
+                    left = mid + 1
+                else:
+                    right = mid - 1
+        print(-1)
+        return -1
+
+
+# nums = [1]
+# target = 0
+# # expected: -1
+
+# nums = [4,5,6,7,0,1,2]
+# target = 3
+# # expected: -1
+
+nums = [4,5,6,7,0,1,2]
+target = 0
+# expected: 4
+
+search(nums,target)
