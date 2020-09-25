@@ -61,7 +61,7 @@ def create_table():
 class Solution:
     def twoSum(self, nums, target):
         
-        sums = []
+        
         hashTable = {}
 
         for i in range(len(nums)):
